@@ -10,3 +10,8 @@ button { background:var(--accent); color:#fff; border:0; padding:0.35rem 0.75rem
 input { border:1px solid var(--grid); padding:0.3rem; }
 a { color: var(--accent); }
 .hero-num { font-size:1.8rem; font-weight:700; }
+.error { color:#a33; font-weight:700; }
+fieldset { border:1px solid var(--grid); margin:0.5rem 0; display:flex; flex-direction:column; gap:0.35rem; }
+fieldset label, .page > label { display:block; margin:0.3rem 0; }
+.compare td { text-align:center; }
+section { margin-top:1rem; border-top:2px solid var(--accent); }

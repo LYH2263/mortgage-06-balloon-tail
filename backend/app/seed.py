@@ -8,6 +8,7 @@ def init_db():
     CREATE TABLE IF NOT EXISTS loans(id INTEGER PRIMARY KEY, name TEXT, principal REAL, annual_rate REAL, months INTEGER);
     CREATE TABLE IF NOT EXISTS settings(key TEXT PRIMARY KEY, value TEXT);
     CREATE TABLE IF NOT EXISTS calc_runs(id INTEGER PRIMARY KEY, kind TEXT, loan_id INTEGER, input_json TEXT, result_json TEXT, created_at TEXT);
+    CREATE TABLE IF NOT EXISTS balloon_rules(id INTEGER PRIMARY KEY, name TEXT, balloon_period INTEGER, cap REAL, enabled INTEGER, created_at TEXT);
     """)
     if conn.execute("SELECT COUNT(*) c FROM loans").fetchone()["c"] == 0:
         conn.execute("INSERT INTO loans(name,principal,annual_rate,months) VALUES ('首套样例',1000000,3.5,360)")
