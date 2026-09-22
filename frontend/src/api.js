@@ -5,6 +5,18 @@ export async function getJSON(path) {
 }
 export async function postJSON(path, body) {
   const r = await fetch(path, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
-  if (!r.ok) throw new Error(await r.text())
+  if (!r.ok) throw new Error((await parseError(r)))
   return r.json()
+}
+export async function patchJSON(path, body) {
+  const r = await fetch(path, { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+  if (!r.ok) throw new Error(await parseError(r))
+  return r.json()
+}
+async function parseError(r) {
+  try {
+    const j = await r.json()
+    if (j?.detail && typeof j.detail === 'object') return JSON.stringify(j.detail)
+    return j?.detail || r.statusText
+  } catch { return r.statusText }
 }

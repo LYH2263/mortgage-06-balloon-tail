@@ -10,3 +10,18 @@ button { background:var(--accent); color:#fff; border:0; padding:0.35rem 0.75rem
 input { border:1px solid var(--grid); padding:0.3rem; }
 a { color: var(--accent); }
 .hero-num { font-size:1.8rem; font-weight:700; }
+.hint { color:#6b5d48; font-size:0.9rem; }
+.err { color:#a02c1f; font-weight:700; }
+.form-row { display:flex; gap:1rem; align-items:center; flex-wrap:wrap; margin:0.5rem 0; }
+.form-row label { display:flex; flex-direction:column; gap:0.2rem; font-size:0.9rem; }
+.form-row label.check { flex-direction:row; align-items:center; }
+.row-actions { white-space:nowrap; }
+.row-actions button { margin-right:0.4rem; }
+button.ghost { background:#fff; color:var(--accent); border:1px solid var(--accent); }
+.tag-on { color:#1d6b3a; font-weight:700; }
+.tag-off { color:#8a8175; }
+.compare { max-width:420px; margin:0.5rem 0; }
+.detail { margin-top:1rem; }
+.detail pre { background:#f4f0e6; border:1px solid var(--grid); padding:0.5rem; overflow-x:auto; }
+tr.row-final { background:#f6e7d8; font-weight:700; }
+select { border:1px solid var(--grid); padding:0.3rem; }

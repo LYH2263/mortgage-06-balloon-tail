@@ -6,3 +6,4 @@ class ScheduleRequest(BaseModel):
     loan_id: int | None = None
     persist: bool = True
     preview_rows: int = Field(default=12, ge=1, le=120)
+    balloon_rule_id: int | None = Field(default=None, description="传入启用中的气球规则即按气球尾款试算；停用或不传则整表等额本息")
